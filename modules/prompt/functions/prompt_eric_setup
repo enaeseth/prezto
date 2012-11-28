@@ -24,12 +24,10 @@ function prompt_eric_setup {
   # Add hook for calling vcs_info before each command.
   add-zsh-hook precmd prompt_eric_precmd
 
-  local vcs_format="%b%u%c"
+  local vcs_format="%b"
 
   zstyle ':vcs_info:*' enable bzr git hg svn
-  zstyle ':vcs_info:*' check-for-changes true
-  zstyle ':vcs_info:*' unstagedstr '%F{red}✗%f'
-  zstyle ':vcs_info:*' stagedstr '%F{green}✔%f'
+  zstyle ':vcs_info:*' check-for-changes false
   zstyle ':vcs_info:*' actionformats "$vcs_format (%a) "
   zstyle ':vcs_info:*' formats "$vcs_format "
   zstyle ':vcs_info:*' nvcsformats ""
